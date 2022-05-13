@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gin-web-log
+  labels:
+    app: gin-web-log
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gin-web-log
+  template:
+    metadata:
+      labels:
+        app: gin-web-log
+    spec:
+      containers:
+        - name: web
+          image: registry.cn-beijing.aliyuncs.com/ning1875_haiwai_image/gin-web-log:v1.0
